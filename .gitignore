@@ -1,3 +1,6 @@
+/dialogue_manager/
+/godot-sqlite/
+/plugin_refresher/
 /.idea/
 # Godot-specific ignores
 .import
