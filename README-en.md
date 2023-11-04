@@ -1,4 +1,7 @@
 # Cutscener
+
+![Screenshot](Cutscener/resource/logo-large.png)
+
 A visuallize event tree editor.
 Easily create a branching event tree in a visuallize way, base on 3 type nodes:
 - SignalNode(run method)
