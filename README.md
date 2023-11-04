@@ -1,6 +1,8 @@
 # Cutscener
 [English README](https://github.com/CodePlayK/Godot-Cutscener/blob/master/README-en.md)
 
+![Screenshot](Cutscener/resource/logo-large.png)
+
 一个Godot的可视化事件编辑器,从**Autoload**中读取指定脚本中的所有方法以及变量,以创建可视化`节点`的形式编排运行方法与设置变量的顺序.
 推荐用于制作游戏过场行为,也可以辅助用于制作对话.
 
