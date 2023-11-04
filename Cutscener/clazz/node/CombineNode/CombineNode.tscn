@@ -1,0 +1,341 @@
+[gd_scene load_steps=14 format=3 uid="uid://csjjv26reksbj"]
+
+[ext_resource type="Theme" uid="uid://ch03cnrspt63o" path="res://addons/Cutscener/resource/node_theme.tres" id="1_8o7ue"]
+[ext_resource type="Script" path="res://addons/Cutscener/clazz/node/CombineNode/CombineNode.gd" id="2_7prir"]
+[ext_resource type="PackedScene" uid="uid://dug4013bo7vnr" path="res://addons/Cutscener/clazz/node/Conmmon/edit_menu.tscn" id="3_3qici"]
+[ext_resource type="PackedScene" uid="uid://dobf7nc4fqttn" path="res://addons/Cutscener/clazz/node/Conmmon/delete_param_butt.tscn" id="3_gdi7v"]
+[ext_resource type="PackedScene" uid="uid://brijnx0ig81b1" path="res://addons/Cutscener/clazz/node/Conmmon/param_2.tscn" id="3_kk2to"]
+[ext_resource type="PackedScene" uid="uid://ce0jui8jj3xxr" path="res://addons/Cutscener/clazz/node/Conmmon/choose_file_butt.tscn" id="4_u2e6o"]
+[ext_resource type="Script" path="res://addons/Cutscener/clazz/node/CombineNode/runner.gd" id="4_v4ke7"]
+[ext_resource type="PackedScene" uid="uid://oclkone2cmff" path="res://addons/Cutscener/clazz/node/Conmmon/choose_vec_2_butt.tscn" id="5_y5waj"]
+[ext_resource type="Script" path="res://addons/Cutscener/clazz/node/CombineNode/Discombine.gd" id="7_2tsu7"]
+[ext_resource type="Script" path="res://addons/Cutscener/clazz/node/CombineNode/ShowLinkData.gd" id="8_qeq4f"]
+[ext_resource type="Script" path="res://addons/Cutscener/clazz/node/CombineNode/OpenLinkFilePath.gd" id="9_elyli"]
+
+[sub_resource type="Image" id="Image_bteyd"]
+data = {
+"data": PackedByteArray(255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 255, 255, 0, 255, 94, 94, 127, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 255, 255, 0, 255, 93, 93, 255, 255, 94, 94, 127, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 255, 255, 0, 255, 93, 93, 255, 255, 93, 93, 255, 255, 94, 94, 127, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 255, 255, 0, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 94, 94, 127, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 93, 93, 231, 255, 94, 94, 54, 255, 94, 94, 57, 255, 93, 93, 233, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 231, 255, 94, 94, 54, 255, 94, 94, 57, 255, 93, 93, 233, 255, 93, 93, 255, 255, 93, 93, 255, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 97, 97, 42, 255, 255, 255, 0, 255, 255, 255, 0, 255, 97, 97, 42, 255, 93, 93, 233, 255, 93, 93, 232, 255, 93, 93, 41, 255, 255, 255, 0, 255, 255, 255, 0, 255, 97, 97, 42, 255, 93, 93, 233, 255, 93, 93, 232, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 96, 96, 45, 255, 93, 93, 44, 255, 255, 255, 0, 255, 97, 97, 42, 255, 97, 97, 42, 255, 255, 255, 0, 255, 96, 96, 45, 255, 93, 93, 44, 255, 255, 255, 0, 255, 97, 97, 42, 255, 97, 97, 42, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 96, 96, 45, 255, 93, 93, 235, 255, 94, 94, 234, 255, 95, 95, 43, 255, 255, 255, 0, 255, 255, 255, 0, 255, 96, 96, 45, 255, 93, 93, 235, 255, 94, 94, 234, 255, 95, 95, 43, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 93, 93, 235, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 233, 255, 95, 95, 59, 255, 96, 96, 61, 255, 93, 93, 235, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 233, 255, 95, 95, 59, 255, 96, 96, 61, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0),
+"format": "RGBA8",
+"height": 16,
+"mipmaps": false,
+"width": 16
+}
+
+[sub_resource type="ImageTexture" id="ImageTexture_p0nrs"]
+image = SubResource("Image_bteyd")
+
+[node name="CombineNode" type="GraphNode"]
+offset_right = 422.0
+offset_bottom = 78.0
+theme = ExtResource("1_8o7ue")
+resizable = true
+title = "Combine"
+slot/0/left_enabled = true
+slot/0/left_type = 0
+slot/0/left_color = Color(1, 1, 1, 1)
+slot/0/left_icon = null
+slot/0/right_enabled = true
+slot/0/right_type = 0
+slot/0/right_color = Color(1, 1, 1, 1)
+slot/0/right_icon = null
+slot/0/draw_stylebox = true
+slot/1/left_enabled = false
+slot/1/left_type = 0
+slot/1/left_color = Color(1, 1, 1, 1)
+slot/1/left_icon = null
+slot/1/right_enabled = false
+slot/1/right_type = 0
+slot/1/right_color = Color(1, 1, 1, 1)
+slot/1/right_icon = null
+slot/1/draw_stylebox = true
+script = ExtResource("2_7prir")
+metadata/node_type = 101
+
+[node name="main" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_top = 7
+
+[node name="ParamPrototype" type="HBoxContainer" parent="main"]
+visible = false
+layout_mode = 2
+
+[node name="Label" type="Label" parent="main/ParamPrototype"]
+layout_mode = 2
+text = "参数.1"
+
+[node name="ConditionLinkType" type="OptionButton" parent="main/ParamPrototype"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.0
+tooltip_text = "条件连接类型"
+item_count = 2
+selected = 0
+fit_to_longest_item = false
+popup/item_0/text = "and"
+popup/item_0/id = 20
+popup/item_1/text = "or"
+popup/item_1/id = 21
+
+[node name="Param" type="LineEdit" parent="main/ParamPrototype"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.3
+tooltip_text = "参数提示/参数名"
+mouse_filter = 1
+placeholder_text = "hint"
+caret_blink = true
+
+[node name="ParamType" type="OptionButton" parent="main/ParamPrototype"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.0
+tooltip_text = "参数类型"
+item_count = 8
+selected = 7
+fit_to_longest_item = false
+popup/item_0/text = "String"
+popup/item_0/id = 4
+popup/item_0/disabled = true
+popup/item_1/text = "float"
+popup/item_1/id = 3
+popup/item_1/disabled = true
+popup/item_2/text = "int"
+popup/item_2/id = 2
+popup/item_2/disabled = true
+popup/item_3/text = "bool"
+popup/item_3/id = 1
+popup/item_3/disabled = true
+popup/item_4/text = "Array"
+popup/item_4/id = 28
+popup/item_4/disabled = true
+popup/item_5/text = "Dictionary"
+popup/item_5/id = 27
+popup/item_5/disabled = true
+popup/item_6/text = "Resource"
+popup/item_6/id = 24
+popup/item_6/disabled = true
+popup/item_7/text = "Vector2"
+popup/item_7/id = 5
+popup/item_7/disabled = true
+
+[node name="ConditionType" type="OptionButton" parent="main/ParamPrototype"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.0
+tooltip_text = "判断条件类型"
+item_count = 8
+selected = 0
+fit_to_longest_item = false
+popup/item_0/text = "=="
+popup/item_0/id = 0
+popup/item_1/text = "!="
+popup/item_1/id = 1
+popup/item_2/text = "<"
+popup/item_2/id = 2
+popup/item_3/text = "<="
+popup/item_3/id = 3
+popup/item_4/text = ">"
+popup/item_4/id = 4
+popup/item_5/text = ">="
+popup/item_5/id = 5
+popup/item_6/text = "not"
+popup/item_6/id = 23
+popup/item_7/text = "in"
+popup/item_7/id = 24
+
+[node name="SetType" type="OptionButton" parent="main/ParamPrototype"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.0
+tooltip_text = "参数类型"
+item_count = 6
+selected = 0
+fit_to_longest_item = false
+popup/item_0/text = "="
+popup/item_0/id = 0
+popup/item_1/text = "+="
+popup/item_1/id = 6
+popup/item_2/text = "-="
+popup/item_2/id = 7
+popup/item_3/text = "×="
+popup/item_3/id = 8
+popup/item_4/text = "÷="
+popup/item_4/id = 9
+popup/item_5/text = "%="
+popup/item_5/id = 12
+
+[node name="Param2" parent="main/ParamPrototype" instance=ExtResource("3_kk2to")]
+visible = false
+layout_mode = 2
+tooltip_text = "目标值"
+theme = null
+
+[node name="Data" type="LineEdit" parent="main/ParamPrototype"]
+visible = false
+layout_mode = 2
+tooltip_text = "该条参数对应在json文件中的位置"
+mouse_filter = 1
+editable = false
+expand_to_text_length = true
+virtual_keyboard_enabled = false
+
+[node name="Data" type="LineEdit" parent="main/ParamPrototype/Data"]
+visible = false
+layout_mode = 0
+tooltip_text = "该条参数对应在json文件中的位置"
+mouse_filter = 1
+editable = false
+expand_to_text_length = true
+virtual_keyboard_enabled = false
+
+[node name="DeleteParam" parent="main/ParamPrototype" instance=ExtResource("3_gdi7v")]
+layout_mode = 2
+
+[node name="ChooseFile" parent="main/ParamPrototype" node_paths=PackedStringArray("node") instance=ExtResource("4_u2e6o")]
+layout_mode = 2
+node = NodePath("../Param2")
+
+[node name="ChooseVec2" parent="main/ParamPrototype" node_paths=PackedStringArray("target") instance=ExtResource("5_y5waj")]
+layout_mode = 2
+target = NodePath("../Param2")
+
+[node name="VBC" type="VBoxContainer" parent="main"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="Signal" type="MarginContainer" parent="main/VBC"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="SignalName" type="HBoxContainer" parent="main/VBC/Signal"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 7
+
+[node name="Icon" type="Button" parent="main/VBC/Signal/SignalName"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/icon_disabled_color = Color(1, 0.890196, 0.501961, 1)
+disabled = true
+icon = SubResource("ImageTexture_p0nrs")
+icon_alignment = 1
+
+[node name="Index" type="Button" parent="main/VBC/Signal/SignalName"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_disabled_color = Color(1, 0.890196, 0.501961, 1)
+theme_override_colors/icon_disabled_color = Color(1, 0.890196, 0.501961, 1)
+theme_override_font_sizes/font_size = 20
+disabled = true
+text = "#0"
+
+[node name="PropList" type="OptionButton" parent="main/VBC/Signal/SignalName"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.59
+item_count = 13
+selected = 0
+popup/item_0/text = "CutsceneState.title_able"
+popup/item_0/id = 0
+popup/item_1/text = "CutsceneState.cutscene_playing"
+popup/item_1/id = 1
+popup/item_2/text = "CutsceneState.dic_cutscenes"
+popup/item_2/id = 2
+popup/item_3/text = "CutsceneState.cutscener_playing"
+popup/item_3/id = 3
+popup/item_4/text = "CutsceneState.current_cutscene"
+popup/item_4/id = 4
+popup/item_5/text = "CutsceneState.test_var_String"
+popup/item_5/id = 5
+popup/item_6/text = "CutsceneState.test_var_Vector2"
+popup/item_6/id = 6
+popup/item_7/text = "CutsceneState.test_var_int"
+popup/item_7/id = 7
+popup/item_8/text = "CutsceneState.test_var_float"
+popup/item_8/id = 8
+popup/item_9/text = "CutsceneState.test_var_Array"
+popup/item_9/id = 9
+popup/item_10/text = "CutsceneState.test_var_Dictionary"
+popup/item_10/id = 10
+popup/item_11/text = "CutsceneState.test_var_Resource"
+popup/item_11/id = 11
+popup/item_12/text = "CutsceneState.player_position"
+popup/item_12/id = 12
+
+[node name="AddParam" type="Button" parent="main/VBC/Signal/SignalName"]
+visible = false
+layout_mode = 2
+text = "Add"
+
+[node name="Param" type="VBoxContainer" parent="main/VBC"]
+layout_mode = 2
+
+[node name="EditMenu" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_bottom = 7
+
+[node name="EditMenu" parent="EditMenu" node_paths=PackedStringArray("index1") instance=ExtResource("3_3qici")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+index1 = NodePath("../../main/VBC/Signal/SignalName/Index")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="EditMenu/EditMenu"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="HBoxContainer" parent="EditMenu/EditMenu/VBoxContainer2"]
+layout_mode = 2
+
+[node name="Discombine" type="Button" parent="EditMenu/EditMenu/VBoxContainer2/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+tooltip_text = "分解该合成Node"
+theme_override_font_sizes/font_size = 14
+text = "分解"
+script = ExtResource("7_2tsu7")
+
+[node name="ShowLinkData" type="Button" parent="EditMenu/EditMenu/VBoxContainer2/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 14
+text = "显示连接数据"
+script = ExtResource("8_qeq4f")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="EditMenu/EditMenu/VBoxContainer2"]
+layout_mode = 2
+
+[node name="LinkedFile" type="LineEdit" parent="EditMenu/EditMenu/VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+tooltip_text = "该node当前连接的存档位置"
+theme = ExtResource("1_8o7ue")
+theme_override_font_sizes/font_size = 14
+placeholder_text = "这里显示该node当前连接的存档"
+editable = false
+
+[node name="OpenLinkFilePath" type="Button" parent="EditMenu/EditMenu/VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "打开所在目录"
+script = ExtResource("9_elyli")
+
+[node name="runner" type="Node" parent="."]
+script = ExtResource("4_v4ke7")
+
+[connection signal="pressed" from="EditMenu/EditMenu/VBoxContainer2/VBoxContainer/Discombine" to="EditMenu/EditMenu/VBoxContainer2/VBoxContainer/Discombine" method="_on_pressed"]
+[connection signal="pressed" from="EditMenu/EditMenu/VBoxContainer2/VBoxContainer/ShowLinkData" to="EditMenu/EditMenu/VBoxContainer2/VBoxContainer/ShowLinkData" method="_on_pressed"]
+[connection signal="pressed" from="EditMenu/EditMenu/VBoxContainer2/HBoxContainer/OpenLinkFilePath" to="EditMenu/EditMenu/VBoxContainer2/HBoxContainer/OpenLinkFilePath" method="_on_pressed"]

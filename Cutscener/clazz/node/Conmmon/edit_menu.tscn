@@ -1,0 +1,130 @@
+[gd_scene load_steps=5 format=3 uid="uid://dug4013bo7vnr"]
+
+[ext_resource type="Script" path="res://addons/Cutscener/clazz/node/Conmmon/edit_menu.gd" id="1_kxgnt"]
+[ext_resource type="Theme" uid="uid://ch03cnrspt63o" path="res://addons/Cutscener/resource/node_theme.tres" id="1_uy03n"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yfcs0"]
+bg_color = Color(0.0117647, 0.254902, 0.192157, 0.54902)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0.913725, 0.905882, 0.6)
+corner_radius_top_left = 1
+corner_radius_top_right = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vl54u"]
+bg_color = Color(0.0117647, 0.254902, 0.192157, 0.54902)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0.913725, 0.905882, 0.6)
+corner_radius_top_left = 1
+corner_radius_top_right = 1
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 1
+
+[node name="EditMenu" type="VBoxContainer"]
+theme = ExtResource("1_uy03n")
+theme_override_constants/separation = 3
+script = ExtResource("1_kxgnt")
+
+[node name="HSeparator" type="HSeparator" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 10
+
+[node name="EditMenu" type="HBoxContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 3
+
+[node name="delete" type="Button" parent="EditMenu"]
+layout_mode = 2
+size_flags_horizontal = 3
+tooltip_text = "删除Node"
+mouse_filter = 1
+theme_override_font_sizes/font_size = 14
+text = "Delete"
+
+[node name="copy" type="Button" parent="EditMenu"]
+layout_mode = 2
+size_flags_horizontal = 3
+tooltip_text = "复制Node"
+mouse_filter = 1
+theme_override_font_sizes/font_size = 14
+text = "Copy Name"
+
+[node name="clear" type="Button" parent="EditMenu"]
+layout_mode = 2
+size_flags_horizontal = 3
+tooltip_text = "清除Node的所有连接"
+mouse_filter = 1
+theme_override_font_sizes/font_size = 14
+text = "Clear Connection"
+
+[node name="timer" type="LineEdit" parent="EditMenu"]
+layout_mode = 2
+size_flags_horizontal = 3
+tooltip_text = "该Node运行结束后的等待时间"
+mouse_filter = 1
+theme_override_font_sizes/font_size = 14
+placeholder_text = "wait time"
+alignment = 1
+expand_to_text_length = true
+caret_blink = true
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_top = 7
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 3
+
+[node name="Index" type="LineEdit" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.0
+tooltip_text = "配置该Node在同层级中的运行顺序"
+theme_override_font_sizes/font_size = 16
+text = "0"
+alignment = 1
+expand_to_text_length = true
+
+[node name="plus" type="Button" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.1
+tooltip_text = "增加index"
+theme = ExtResource("1_uy03n")
+theme_override_styles/normal = SubResource("StyleBoxFlat_yfcs0")
+text = "+"
+icon_alignment = 1
+
+[node name="min" type="Button" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.1
+tooltip_text = "减少index"
+theme = ExtResource("1_uy03n")
+theme_override_styles/normal = SubResource("StyleBoxFlat_vl54u")
+text = "-"
+icon_alignment = 1
+
+[node name="TitleEdit" type="LineEdit" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+tooltip_text = "修改标题名"
+theme_override_font_sizes/font_size = 16
+placeholder_text = "title edit here"
+alignment = 1
+expand_to_text_length = true
+
+[connection signal="text_changed" from="MarginContainer/HBoxContainer/Index" to="." method="_on_index_text_changed"]
+[connection signal="button_down" from="MarginContainer/HBoxContainer/plus" to="." method="_on_plus_button_down"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/min" to="." method="_on_min_pressed"]
+[connection signal="text_changed" from="MarginContainer/HBoxContainer/TitleEdit" to="." method="_on_title_edit_text_changed"]

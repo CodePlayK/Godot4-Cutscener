@@ -1,0 +1,259 @@
+[gd_scene load_steps=12 format=3 uid="uid://cmg1sugpxikvt"]
+
+[ext_resource type="Theme" uid="uid://ch03cnrspt63o" path="res://addons/Cutscener/resource/node_theme.tres" id="1_s6fmr"]
+[ext_resource type="Script" path="res://addons/Cutscener/clazz/node/ConditionNode/ConditionNode.gd" id="2_xr0h6"]
+[ext_resource type="PackedScene" uid="uid://dobf7nc4fqttn" path="res://addons/Cutscener/clazz/node/Conmmon/delete_param_butt.tscn" id="3_63l2l"]
+[ext_resource type="PackedScene" uid="uid://brijnx0ig81b1" path="res://addons/Cutscener/clazz/node/Conmmon/param_2.tscn" id="3_5232u"]
+[ext_resource type="PackedScene" uid="uid://ce0jui8jj3xxr" path="res://addons/Cutscener/clazz/node/Conmmon/choose_file_butt.tscn" id="4_xmtyl"]
+[ext_resource type="PackedScene" uid="uid://oclkone2cmff" path="res://addons/Cutscener/clazz/node/Conmmon/choose_vec_2_butt.tscn" id="5_451ug"]
+[ext_resource type="PackedScene" uid="uid://dug4013bo7vnr" path="res://addons/Cutscener/clazz/node/Conmmon/edit_menu.tscn" id="5_g5yrs"]
+[ext_resource type="Script" path="res://addons/Cutscener/clazz/node/ConditionNode/runner.gd" id="6_du3o6"]
+[ext_resource type="PackedScene" uid="uid://us35lq4dhp2h" path="res://addons/Cutscener/clazz/node/Conmmon/export.tscn" id="6_w7h20"]
+
+[sub_resource type="Image" id="Image_bteyd"]
+data = {
+"data": PackedByteArray(255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 255, 255, 0, 255, 94, 94, 127, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 255, 255, 0, 255, 93, 93, 255, 255, 94, 94, 127, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 255, 255, 0, 255, 93, 93, 255, 255, 93, 93, 255, 255, 94, 94, 127, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 255, 255, 0, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 94, 94, 127, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 93, 93, 231, 255, 94, 94, 54, 255, 94, 94, 57, 255, 93, 93, 233, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 231, 255, 94, 94, 54, 255, 94, 94, 57, 255, 93, 93, 233, 255, 93, 93, 255, 255, 93, 93, 255, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 97, 97, 42, 255, 255, 255, 0, 255, 255, 255, 0, 255, 97, 97, 42, 255, 93, 93, 233, 255, 93, 93, 232, 255, 93, 93, 41, 255, 255, 255, 0, 255, 255, 255, 0, 255, 97, 97, 42, 255, 93, 93, 233, 255, 93, 93, 232, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 96, 96, 45, 255, 93, 93, 44, 255, 255, 255, 0, 255, 97, 97, 42, 255, 97, 97, 42, 255, 255, 255, 0, 255, 96, 96, 45, 255, 93, 93, 44, 255, 255, 255, 0, 255, 97, 97, 42, 255, 97, 97, 42, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 96, 96, 45, 255, 93, 93, 235, 255, 94, 94, 234, 255, 95, 95, 43, 255, 255, 255, 0, 255, 255, 255, 0, 255, 96, 96, 45, 255, 93, 93, 235, 255, 94, 94, 234, 255, 95, 95, 43, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 93, 93, 235, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 233, 255, 95, 95, 59, 255, 96, 96, 61, 255, 93, 93, 235, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 233, 255, 95, 95, 59, 255, 96, 96, 61, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0),
+"format": "RGBA8",
+"height": 16,
+"mipmaps": false,
+"width": 16
+}
+
+[sub_resource type="ImageTexture" id="ImageTexture_p0nrs"]
+image = SubResource("Image_bteyd")
+
+[node name="ConditionNode" type="GraphNode"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -60.0
+offset_top = -140.5
+offset_right = -1440.0
+offset_bottom = -926.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme = ExtResource("1_s6fmr")
+resizable = true
+title = "Condition"
+slot/0/left_enabled = true
+slot/0/left_type = 0
+slot/0/left_color = Color(1, 1, 1, 1)
+slot/0/left_icon = null
+slot/0/right_enabled = true
+slot/0/right_type = 0
+slot/0/right_color = Color(0.113725, 1, 0.572549, 0.866667)
+slot/0/right_icon = null
+slot/0/draw_stylebox = true
+slot/1/left_enabled = false
+slot/1/left_type = 0
+slot/1/left_color = Color(1, 1, 1, 1)
+slot/1/left_icon = null
+slot/1/right_enabled = true
+slot/1/right_type = 0
+slot/1/right_color = Color(1, 0.290196, 0.313726, 0.866667)
+slot/1/right_icon = null
+slot/1/draw_stylebox = true
+script = ExtResource("2_xr0h6")
+metadata/node_type = 3
+
+[node name="main" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_top = 7
+
+[node name="ParamPrototype" type="HBoxContainer" parent="main"]
+visible = false
+layout_mode = 2
+
+[node name="ConditionLinkType" type="OptionButton" parent="main/ParamPrototype"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.0
+tooltip_text = "连接类型"
+item_count = 2
+selected = 0
+fit_to_longest_item = false
+popup/item_0/text = "and"
+popup/item_0/id = 20
+popup/item_1/text = "or"
+popup/item_1/id = 21
+
+[node name="Label" type="Label" parent="main/ParamPrototype"]
+layout_mode = 2
+text = "参数.1"
+
+[node name="Param" type="LineEdit" parent="main/ParamPrototype"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.0
+tooltip_text = "参数名"
+mouse_filter = 1
+placeholder_text = "write hint here"
+editable = false
+expand_to_text_length = true
+caret_blink = true
+
+[node name="ParamType" type="OptionButton" parent="main/ParamPrototype"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.0
+tooltip_text = "参数类型"
+item_count = 8
+selected = 7
+fit_to_longest_item = false
+popup/item_0/text = "String"
+popup/item_0/id = 4
+popup/item_0/disabled = true
+popup/item_1/text = "float"
+popup/item_1/id = 3
+popup/item_1/disabled = true
+popup/item_2/text = "int"
+popup/item_2/id = 2
+popup/item_2/disabled = true
+popup/item_3/text = "bool"
+popup/item_3/id = 1
+popup/item_3/disabled = true
+popup/item_4/text = "Array"
+popup/item_4/id = 28
+popup/item_4/disabled = true
+popup/item_5/text = "Dictionary"
+popup/item_5/id = 27
+popup/item_5/disabled = true
+popup/item_6/text = "Resource"
+popup/item_6/id = 24
+popup/item_6/disabled = true
+popup/item_7/text = "Vector2"
+popup/item_7/id = 5
+popup/item_7/disabled = true
+
+[node name="ConditionType" type="OptionButton" parent="main/ParamPrototype"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.0
+tooltip_text = "判断符号"
+item_count = 8
+selected = 0
+fit_to_longest_item = false
+popup/item_0/text = "=="
+popup/item_0/id = 0
+popup/item_1/text = "!="
+popup/item_1/id = 1
+popup/item_2/text = "<"
+popup/item_2/id = 2
+popup/item_3/text = "<="
+popup/item_3/id = 3
+popup/item_4/text = ">"
+popup/item_4/id = 4
+popup/item_5/text = ">="
+popup/item_5/id = 5
+popup/item_6/text = "not"
+popup/item_6/id = 23
+popup/item_7/text = "in"
+popup/item_7/id = 24
+
+[node name="Param2" parent="main/ParamPrototype" instance=ExtResource("3_5232u")]
+layout_mode = 2
+tooltip_text = "目标值"
+theme = null
+
+[node name="DeleteParam" parent="main/ParamPrototype" instance=ExtResource("3_63l2l")]
+visible = true
+layout_mode = 2
+
+[node name="ChooseFile" parent="main/ParamPrototype" node_paths=PackedStringArray("node") instance=ExtResource("4_xmtyl")]
+layout_mode = 2
+node = NodePath("../Param2")
+
+[node name="ChooseVec2" parent="main/ParamPrototype" node_paths=PackedStringArray("target") instance=ExtResource("5_451ug")]
+layout_mode = 2
+target = NodePath("../Param2")
+
+[node name="Export" parent="main/ParamPrototype" instance=ExtResource("6_w7h20")]
+visible = false
+layout_mode = 2
+
+[node name="VBC" type="VBoxContainer" parent="main"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="Signal" type="MarginContainer" parent="main/VBC"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="SignalName" type="HBoxContainer" parent="main/VBC/Signal"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 7
+
+[node name="Icon" type="Button" parent="main/VBC/Signal/SignalName"]
+layout_mode = 2
+theme_override_colors/icon_disabled_color = Color(1, 0.890196, 0.501961, 1)
+disabled = true
+icon = SubResource("ImageTexture_p0nrs")
+
+[node name="Index" type="Button" parent="main/VBC/Signal/SignalName"]
+visible = false
+layout_mode = 2
+theme_override_colors/font_disabled_color = Color(1, 0.890196, 0.501961, 1)
+theme_override_colors/icon_disabled_color = Color(1, 0.890196, 0.501961, 1)
+disabled = true
+text = "#1"
+
+[node name="PropList" type="OptionButton" parent="main/VBC/Signal/SignalName"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.59
+tooltip_text = "选择参数"
+item_count = 13
+selected = 0
+popup/item_0/text = "CutsceneState.title_able"
+popup/item_0/id = 0
+popup/item_1/text = "CutsceneState.cutscene_playing"
+popup/item_1/id = 1
+popup/item_2/text = "CutsceneState.dic_cutscenes"
+popup/item_2/id = 2
+popup/item_3/text = "CutsceneState.cutscener_playing"
+popup/item_3/id = 3
+popup/item_4/text = "CutsceneState.current_cutscene"
+popup/item_4/id = 4
+popup/item_5/text = "CutsceneState.test_var_String"
+popup/item_5/id = 5
+popup/item_6/text = "CutsceneState.test_var_Vector2"
+popup/item_6/id = 6
+popup/item_7/text = "CutsceneState.test_var_int"
+popup/item_7/id = 7
+popup/item_8/text = "CutsceneState.test_var_float"
+popup/item_8/id = 8
+popup/item_9/text = "CutsceneState.test_var_Array"
+popup/item_9/id = 9
+popup/item_10/text = "CutsceneState.test_var_Dictionary"
+popup/item_10/id = 10
+popup/item_11/text = "CutsceneState.test_var_Resource"
+popup/item_11/id = 11
+popup/item_12/text = "CutsceneState.player_position"
+popup/item_12/id = 12
+
+[node name="AddParam" type="Button" parent="main/VBC/Signal/SignalName"]
+layout_mode = 2
+tooltip_text = "添加参数"
+text = "Add"
+
+[node name="Param" type="VBoxContainer" parent="main/VBC"]
+layout_mode = 2
+
+[node name="EditMenu" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_bottom = 7
+
+[node name="EditMenu" parent="EditMenu" node_paths=PackedStringArray("index1") instance=ExtResource("5_g5yrs")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+index1 = NodePath("../../main/VBC/Signal/SignalName/Index")
+
+[node name="runner" type="Node" parent="."]
+script = ExtResource("6_du3o6")
+
+[connection signal="pressed" from="main/VBC/Signal/SignalName/AddParam" to="." method="_on_add_param_pressed"]

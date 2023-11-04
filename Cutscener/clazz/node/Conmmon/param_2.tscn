@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://brijnx0ig81b1"]
+
+[ext_resource type="Theme" uid="uid://ch03cnrspt63o" path="res://addons/Cutscener/resource/node_theme.tres" id="1_f2qqe"]
+[ext_resource type="Script" path="res://addons/Cutscener/clazz/node/Conmmon/Param2.gd" id="2_kslei"]
+
+[node name="Param2" type="LineEdit"]
+size_flags_horizontal = 3
+tooltip_text = "参数值"
+mouse_filter = 1
+theme = ExtResource("1_f2qqe")
+placeholder_text = "write arg here"
+caret_blink = true
+script = ExtResource("2_kslei")
+
+[connection signal="focus_entered" from="." to="." method="_on_focus_entered"]
+[connection signal="focus_exited" from="." to="." method="_on_focus_exited"]
+[connection signal="text_changed" from="." to="." method="_on_text_changed"]

@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dobf7nc4fqttn"]
+
+[ext_resource type="Script" path="res://addons/Cutscener/clazz/node/Conmmon/DeleteParam.gd" id="1_wxqel"]
+
+[node name="DeleteParam" type="Button"]
+visible = false
+tooltip_text = "删除该行参数"
+text = "X"
+script = ExtResource("1_wxqel")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

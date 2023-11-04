@@ -1,0 +1,31 @@
+[gd_scene load_steps=8 format=3 uid="uid://dcc7bu2anjt2v"]
+
+[ext_resource type="Script" path="res://addons/Cutscener/clazz/node/Cutscener/CutscenerRunner.gd" id="1_k2wxd"]
+[ext_resource type="Script" path="res://addons/Cutscener/clazz/node/SignalNode/runner.gd" id="2_ieleg"]
+[ext_resource type="Script" path="res://addons/Cutscener/clazz/node/StartNode/runner.gd" id="3_qdttn"]
+[ext_resource type="Script" path="res://addons/Cutscener/clazz/node/SetNode/runner.gd" id="4_nkpg4"]
+[ext_resource type="Script" path="res://addons/Cutscener/clazz/node/ConditionNode/runner.gd" id="5_fju3x"]
+[ext_resource type="Script" path="res://addons/Cutscener/clazz/node/EndNode/runner.gd" id="6_b33p6"]
+[ext_resource type="Script" path="res://addons/Cutscener/clazz/node/CombineNode/runner.gd" id="7_fkqpi"]
+
+[node name="CutscenerRunner" type="Node2D"]
+position = Vector2(85, 27)
+script = ExtResource("1_k2wxd")
+
+[node name="SignalRunner" type="Node" parent="."]
+script = ExtResource("2_ieleg")
+
+[node name="StartRunner" type="Node" parent="."]
+script = ExtResource("3_qdttn")
+
+[node name="SetRunner" type="Node" parent="."]
+script = ExtResource("4_nkpg4")
+
+[node name="ConditionRunner" type="Node" parent="."]
+script = ExtResource("5_fju3x")
+
+[node name="EndRunner" type="Node" parent="."]
+script = ExtResource("6_b33p6")
+
+[node name="CombineRunner" type="Node" parent="."]
+script = ExtResource("7_fkqpi")

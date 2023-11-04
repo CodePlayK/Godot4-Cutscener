@@ -1,0 +1,481 @@
+[gd_scene load_steps=28 format=3 uid="uid://j145gtkvw2ri"]
+
+[ext_resource type="Theme" uid="uid://ch03cnrspt63o" path="res://addons/Cutscener/resource/node_theme.tres" id="1_3euby"]
+[ext_resource type="Script" path="res://addons/Cutscener/main/WorkSpace.gd" id="1_kftep"]
+[ext_resource type="Script" path="res://addons/Cutscener/main/main.gd" id="2_ul7bd"]
+[ext_resource type="PackedScene" uid="uid://dcc7bu2anjt2v" path="res://addons/Cutscener/clazz/node/Cutscener/CutscenerRunner.tscn" id="3_xkci8"]
+[ext_resource type="Script" path="res://addons/Cutscener/main/PopupDialog.gd" id="5_jnprd"]
+[ext_resource type="Script" path="res://addons/Cutscener/main/CombineNodeFileDialog.gd" id="6_gajui"]
+[ext_resource type="Script" path="res://addons/Cutscener/main/PopupMenu.gd" id="6_v3le5"]
+[ext_resource type="PackedScene" uid="uid://chl3o7kjlqyn4" path="res://addons/Cutscener/clazz/node/SignalNode/signal_node.tscn" id="6_vn31q"]
+[ext_resource type="Script" path="res://addons/Cutscener/main/SettingDialog.gd" id="7_7gdnm"]
+[ext_resource type="PackedScene" uid="uid://dgehu404kucay" path="res://addons/Cutscener/main/Setting.tscn" id="7_fgf7w"]
+[ext_resource type="PackedScene" uid="uid://bvqr0jtg678bg" path="res://addons/Cutscener/clazz/node/StartNode/StartNode.tscn" id="7_qhdli"]
+[ext_resource type="Script" path="res://addons/Cutscener/main/GraphEdit.gd" id="7_r5uag"]
+[ext_resource type="PackedScene" uid="uid://dmc6qf48xf7fu" path="res://addons/Cutscener/clazz/node/SetNode/SetNode.tscn" id="8_rnjt2"]
+[ext_resource type="Script" path="res://addons/Cutscener/main/States.gd" id="10_3lqxl"]
+[ext_resource type="PackedScene" uid="uid://cmg1sugpxikvt" path="res://addons/Cutscener/clazz/node/ConditionNode/ConditionNode.tscn" id="11_hhpcm"]
+[ext_resource type="PackedScene" uid="uid://bsmk131mmsvfr" path="res://addons/Cutscener/clazz/node/EndNode/EndNode.tscn" id="12_js0mr"]
+[ext_resource type="PackedScene" uid="uid://csjjv26reksbj" path="res://addons/Cutscener/clazz/node/CombineNode/CombineNode.tscn" id="13_kralt"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2p4e5"]
+
+[sub_resource type="Image" id="Image_ctvn1"]
+data = {
+"data": PackedByteArray(255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 255, 255, 0, 255, 94, 94, 127, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 255, 255, 0, 255, 93, 93, 255, 255, 94, 94, 127, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 255, 255, 0, 255, 93, 93, 255, 255, 93, 93, 255, 255, 94, 94, 127, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 255, 255, 0, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 94, 94, 127, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 93, 93, 231, 255, 94, 94, 54, 255, 94, 94, 57, 255, 93, 93, 233, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 231, 255, 94, 94, 54, 255, 94, 94, 57, 255, 93, 93, 233, 255, 93, 93, 255, 255, 93, 93, 255, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 97, 97, 42, 255, 255, 255, 0, 255, 255, 255, 0, 255, 97, 97, 42, 255, 93, 93, 233, 255, 93, 93, 232, 255, 93, 93, 41, 255, 255, 255, 0, 255, 255, 255, 0, 255, 97, 97, 42, 255, 93, 93, 233, 255, 93, 93, 232, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 96, 96, 45, 255, 93, 93, 44, 255, 255, 255, 0, 255, 97, 97, 42, 255, 97, 97, 42, 255, 255, 255, 0, 255, 96, 96, 45, 255, 93, 93, 44, 255, 255, 255, 0, 255, 97, 97, 42, 255, 97, 97, 42, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 96, 96, 45, 255, 93, 93, 235, 255, 94, 94, 234, 255, 95, 95, 43, 255, 255, 255, 0, 255, 255, 255, 0, 255, 96, 96, 45, 255, 93, 93, 235, 255, 94, 94, 234, 255, 95, 95, 43, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 93, 93, 235, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 233, 255, 95, 95, 59, 255, 96, 96, 61, 255, 93, 93, 235, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 233, 255, 95, 95, 59, 255, 96, 96, 61, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0),
+"format": "RGBA8",
+"height": 16,
+"mipmaps": false,
+"width": 16
+}
+
+[sub_resource type="ImageTexture" id="ImageTexture_agacm"]
+image = SubResource("Image_ctvn1")
+
+[sub_resource type="InputEventKey" id="InputEventKey_r08c3"]
+device = -1
+alt_pressed = true
+keycode = 83
+
+[sub_resource type="Shortcut" id="Shortcut_3lm0b"]
+events = [SubResource("InputEventKey_r08c3")]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qgtkg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nqiy8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_80t33"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fcgeb"]
+content_margin_top = 3.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tc3oo"]
+
+[node name="Cutscener" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("1_3euby")
+script = ExtResource("2_ul7bd")
+
+[node name="CutscenerRunner" parent="." instance=ExtResource("3_xkci8")]
+cutscener_data = "<null>"
+
+[node name="PopupDialog" type="ConfirmationDialog" parent="."]
+disable_3d = true
+initial_position = 2
+unresizable = true
+content_scale_mode = 1
+dialog_text = "确认啥呢~"
+script = ExtResource("5_jnprd")
+
+[node name="FileDialog" type="FileDialog" parent="."]
+initial_position = 2
+size = Vector2i(730, 454)
+access = 1
+filters = PackedStringArray("*.crd")
+show_hidden_files = true
+
+[node name="CombineNodeFileDialog" type="FileDialog" parent="."]
+initial_position = 2
+size = Vector2i(730, 454)
+access = 1
+filters = PackedStringArray("*.cnd")
+show_hidden_files = true
+script = ExtResource("6_gajui")
+
+[node name="FileDialogRes" type="FileDialog" parent="."]
+initial_position = 2
+size = Vector2i(730, 454)
+filters = PackedStringArray("*.crd")
+show_hidden_files = true
+
+[node name="NodeFileDialog" type="FileDialog" parent="."]
+disable_3d = true
+title = "Open a File"
+initial_position = 2
+size = Vector2i(730, 454)
+ok_button_text = "打开"
+file_mode = 0
+show_hidden_files = true
+
+[node name="SettingDialog" type="AcceptDialog" parent="."]
+title = "Setting"
+initial_position = 1
+size = Vector2i(736, 650)
+script = ExtResource("7_7gdnm")
+
+[node name="Setting" parent="SettingDialog" instance=ExtResource("7_fgf7w")]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = -44.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+metadata/_edit_lock_ = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_3euby")
+
+[node name="FileLabel" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "当前打开文件: user://Cutscener/demo/1.crd"
+
+[node name="ActionPanel" type="Panel" parent="VBoxContainer/HBoxContainer"]
+z_index = 1
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_2p4e5")
+
+[node name="ActionLabel" type="Label" parent="VBoxContainer/HBoxContainer/ActionPanel"]
+z_index = 3
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_right = -16.0
+offset_bottom = 897.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+text = "载入视图:[user://Cutscener/demo/1.crd]
+
+
+载入视图:[user://Cutscener/demo/1.crd]
+
+载入视图:[user://Cutscener/demo/1.crd]
+保存视图:[user://Cutscener/demo/1.crd]
+保存视图:[user://Cutscener/demo/1.crd]
+载入视图:[user://Cutscener/demo/1.crd]
+保存视图:[user://Cutscener/demo/1.crd]
+保存视图:[user://Cutscener/demo/1.crd]
+保存视图:[user://Cutscener/demo/1.crd]
+保存视图:[user://Cutscener/demo/1.crd]
+载入视图:[user://Cutscener/demo/1.crd]
+保存视图:[user://Cutscener/demo/1.crd]
+保存视图:[user://Cutscener/demo/1.crd]
+载入视图:[user://Cutscener/demo/1.crd]
+保存视图:[user://Cutscener/demo/1.crd]
+保存视图:[user://Cutscener/demo/1.crd]
+载入视图:[user://Cutscener/demo/1.crd]
+载入视图:[user://Cutscener/demo/1.crd]
+保存视图:[user://Cutscener/demo/1.crd]
+保存视图:[user://Cutscener/demo/1.crd]
+连接node:[StartNode_12467602383386].0->[SignalNode_17621630250836].0
+连接node:[StartNode_12467602383386].0->[SetNode_16722405028692].0
+连接node:[StartNode_15474247258130].0->[SetNode_16722405028692].0
+载入视图:[user://Cutscener/demo/1.crd]
+[CombineNode_17264577530270]载入聚合node数据覆盖!
+[SignalNode_16038532018694]载入聚合node数据覆盖!
+载入视图:[user://Cutscener/demo/1.crd]
+开始分解聚合节点[CombineNode_17264577530270]
+载入视图:[user://Cutscener/demo/1.crd]
+"
+horizontal_alignment = 2
+visible_characters_behavior = 1
+
+[node name="MenuBar" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
+
+[node name="sidebar" type="Button" parent="VBoxContainer/MenuBar"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.0
+tooltip_text = "打开/关闭侧边栏"
+theme = ExtResource("1_3euby")
+theme_override_colors/font_color = Color(1, 0.890196, 0.501961, 1)
+toggle_mode = true
+button_pressed = true
+icon = SubResource("ImageTexture_agacm")
+icon_alignment = 1
+
+[node name="save" type="Button" parent="VBoxContainer/MenuBar"]
+layout_mode = 2
+size_flags_horizontal = 3
+tooltip_text = "保存当前视图"
+theme = ExtResource("1_3euby")
+theme_override_colors/font_color = Color(1, 0.890196, 0.501961, 1)
+shortcut = SubResource("Shortcut_3lm0b")
+text = "Save"
+icon = SubResource("ImageTexture_agacm")
+
+[node name="save_as" type="Button" parent="VBoxContainer/MenuBar"]
+layout_mode = 2
+size_flags_horizontal = 3
+tooltip_text = "当前视图另存为"
+theme = ExtResource("1_3euby")
+theme_override_colors/font_color = Color(1, 0.890196, 0.501961, 1)
+text = "Save As"
+icon = SubResource("ImageTexture_agacm")
+
+[node name="open" type="Button" parent="VBoxContainer/MenuBar"]
+layout_mode = 2
+size_flags_horizontal = 3
+tooltip_text = "打开视图"
+theme = ExtResource("1_3euby")
+theme_override_colors/font_color = Color(1, 0.890196, 0.501961, 1)
+text = "Open"
+icon = SubResource("ImageTexture_agacm")
+
+[node name="new" type="Button" parent="VBoxContainer/MenuBar"]
+layout_mode = 2
+size_flags_horizontal = 3
+tooltip_text = "新建视图"
+theme = ExtResource("1_3euby")
+theme_override_colors/font_color = Color(1, 0.890196, 0.501961, 1)
+text = "New"
+icon = SubResource("ImageTexture_agacm")
+
+[node name="run" type="Button" parent="VBoxContainer/MenuBar"]
+layout_mode = 2
+size_flags_horizontal = 3
+tooltip_text = "运行视图"
+theme = ExtResource("1_3euby")
+theme_override_colors/font_color = Color(1, 0.890196, 0.501961, 1)
+text = "Run"
+icon = SubResource("ImageTexture_agacm")
+
+[node name="load" type="Button" parent="VBoxContainer/MenuBar"]
+layout_mode = 2
+size_flags_horizontal = 3
+tooltip_text = "重新载入当前视图"
+theme = ExtResource("1_3euby")
+theme_override_colors/font_color = Color(1, 0.890196, 0.501961, 1)
+text = "Reload"
+icon = SubResource("ImageTexture_agacm")
+
+[node name="rearrange" type="Button" parent="VBoxContainer/MenuBar"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.52
+tooltip_text = "整理所有Node(慎用)"
+theme = ExtResource("1_3euby")
+theme_override_colors/font_color = Color(1, 0.890196, 0.501961, 1)
+text = "Rearrange"
+icon = SubResource("ImageTexture_agacm")
+
+[node name="setting" type="Button" parent="VBoxContainer/MenuBar"]
+layout_mode = 2
+size_flags_horizontal = 3
+tooltip_text = "整理所有Node(慎用)"
+theme = ExtResource("1_3euby")
+theme_override_colors/font_color = Color(1, 0.890196, 0.501961, 1)
+text = "Setting"
+icon = SubResource("ImageTexture_agacm")
+
+[node name="run_config" type="HBoxContainer" parent="VBoxContainer/MenuBar"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.16
+tooltip_text = "执行场景"
+theme = ExtResource("1_3euby")
+
+[node name="run_project" type="Button" parent="VBoxContainer/MenuBar/run_config"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_3euby")
+theme_override_colors/font_color = Color(1, 0.890196, 0.501961, 1)
+text = "Run Scene"
+icon = SubResource("ImageTexture_agacm")
+
+[node name="project_choose" type="OptionButton" parent="VBoxContainer/MenuBar/run_config"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.0
+tooltip_text = "要执行的场景选择"
+theme = ExtResource("1_3euby")
+item_count = 2
+selected = 1
+popup/item_0/text = "主场景"
+popup/item_0/id = 0
+popup/item_1/text = "Cutscener"
+popup/item_1/id = 1
+
+[node name="WorkSpace" type="HSplitContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+script = ExtResource("1_kftep")
+
+[node name="SideBar" type="VBoxContainer" parent="VBoxContainer/WorkSpace"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.0
+theme = ExtResource("1_3euby")
+
+[node name="Label" type="Button" parent="VBoxContainer/WorkSpace/SideBar"]
+layout_mode = 2
+theme_override_colors/font_disabled_color = Color(1, 0.890196, 0.501961, 1)
+theme_override_colors/icon_disabled_color = Color(1, 0.890196, 0.501961, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_qgtkg")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_nqiy8")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_80t33")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_fcgeb")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_tc3oo")
+disabled = true
+text = "File History:"
+icon = SubResource("ImageTexture_agacm")
+alignment = 0
+
+[node name="FileHistory" type="ItemList" parent="VBoxContainer/WorkSpace/SideBar"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_vertical = 3
+item_count = 1
+same_column_width = true
+item_0/text = "1.crd"
+
+[node name="Label2" type="Button" parent="VBoxContainer/WorkSpace/SideBar"]
+layout_mode = 2
+theme_override_colors/font_disabled_color = Color(1, 0.890196, 0.501961, 1)
+theme_override_colors/icon_disabled_color = Color(1, 0.890196, 0.501961, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_qgtkg")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_nqiy8")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_80t33")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_fcgeb")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_tc3oo")
+disabled = true
+text = "Global Variant:"
+icon = SubResource("ImageTexture_agacm")
+alignment = 0
+
+[node name="States" type="ItemList" parent="VBoxContainer/WorkSpace/SideBar"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_vertical = 3
+item_count = 13
+same_column_width = true
+item_0/text = "title_able"
+item_1/text = "cutscene_playing"
+item_2/text = "dic_cutscenes"
+item_3/text = "cutscener_playing"
+item_4/text = "current_cutscene"
+item_5/text = "test_var_String"
+item_6/text = "test_var_Vector2"
+item_7/text = "test_var_int"
+item_8/text = "test_var_float"
+item_9/text = "test_var_Array"
+item_10/text = "test_var_Dictionary"
+item_11/text = "test_var_Resource"
+item_12/text = "player_position"
+script = ExtResource("10_3lqxl")
+
+[node name="GraphEdit" type="GraphEdit" parent="VBoxContainer/WorkSpace"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+snapping_enabled = false
+right_disconnects = true
+show_zoom_label = true
+show_arrange_button = false
+script = ExtResource("7_r5uag")
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="Clipboard" type="Control" parent="VBoxContainer/WorkSpace/GraphEdit"]
+visible = false
+layout_mode = 2
+anchors_preset = 0
+offset_top = -35.0
+offset_right = 1920.0
+offset_bottom = 1045.0
+mouse_filter = 1
+
+[node name="PopupMenu" type="PopupMenu" parent="VBoxContainer/WorkSpace/GraphEdit"]
+disable_3d = true
+size = Vector2i(316, 194)
+item_count = 7
+item_0/text = "Add [Start] Node"
+item_0/id = 0
+item_1/text = "Add [Signal] Node"
+item_1/id = 1
+item_2/text = "Add [Set] Node"
+item_2/id = 2
+item_3/text = "Add [Condition] Node"
+item_3/id = 3
+item_4/text = "Add [End] Node"
+item_4/id = 4
+item_5/text = "operat"
+item_5/id = -1
+item_5/separator = true
+item_6/text = "合并选中节点 / Combine selected nodes..."
+item_6/id = 101
+script = ExtResource("6_v3le5")
+
+[node name="Prototype" type="Control" parent="VBoxContainer/WorkSpace/GraphEdit"]
+visible = false
+anchors_preset = 0
+mouse_filter = 1
+
+[node name="SignalNode" parent="VBoxContainer/WorkSpace/GraphEdit/Prototype" instance=ExtResource("6_vn31q")]
+layout_mode = 0
+
+[node name="StartNode" parent="VBoxContainer/WorkSpace/GraphEdit/Prototype" instance=ExtResource("7_qhdli")]
+layout_mode = 0
+
+[node name="EndNode" parent="VBoxContainer/WorkSpace/GraphEdit/Prototype" instance=ExtResource("12_js0mr")]
+layout_mode = 0
+
+[node name="ConditionNode" parent="VBoxContainer/WorkSpace/GraphEdit/Prototype" instance=ExtResource("11_hhpcm")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = -931.0
+offset_top = -500.5
+offset_right = -403.0
+offset_bottom = -386.5
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="CombineNode" parent="VBoxContainer/WorkSpace/GraphEdit/Prototype" instance=ExtResource("13_kralt")]
+layout_mode = 0
+
+[node name="SetNode" parent="VBoxContainer/WorkSpace/GraphEdit/Prototype" instance=ExtResource("8_rnjt2")]
+layout_mode = 0
+
+[connection signal="tree_exited" from="." to="." method="_on_tree_exited"]
+[connection signal="canceled" from="PopupDialog" to="PopupDialog" method="_on_canceled"]
+[connection signal="confirmed" from="PopupDialog" to="PopupDialog" method="_on_confirmed"]
+[connection signal="file_selected" from="FileDialog" to="VBoxContainer/WorkSpace" method="_on_file_dialog_file_selected"]
+[connection signal="canceled" from="CombineNodeFileDialog" to="CombineNodeFileDialog" method="_on_canceled"]
+[connection signal="confirmed" from="CombineNodeFileDialog" to="CombineNodeFileDialog" method="_on_confirmed"]
+[connection signal="file_selected" from="CombineNodeFileDialog" to="CombineNodeFileDialog" method="_on_file_selected"]
+[connection signal="canceled" from="SettingDialog" to="SettingDialog" method="_on_canceled"]
+[connection signal="confirmed" from="SettingDialog" to="SettingDialog" method="_on_confirmed"]
+[connection signal="mouse_entered" from="VBoxContainer/HBoxContainer/ActionPanel" to="VBoxContainer/WorkSpace" method="_on_panel_mouse_entered"]
+[connection signal="mouse_exited" from="VBoxContainer/HBoxContainer/ActionPanel" to="VBoxContainer/WorkSpace" method="_on_action_panel_mouse_exited"]
+[connection signal="toggled" from="VBoxContainer/MenuBar/sidebar" to="VBoxContainer/WorkSpace" method="_on_sidebar_toggled"]
+[connection signal="button_down" from="VBoxContainer/MenuBar/save" to="VBoxContainer/WorkSpace" method="_on_save_button_down"]
+[connection signal="pressed" from="VBoxContainer/MenuBar/save" to="VBoxContainer/WorkSpace" method="_on_save_pressed"]
+[connection signal="pressed" from="VBoxContainer/MenuBar/save_as" to="VBoxContainer/WorkSpace" method="_on_save_other_pressed"]
+[connection signal="pressed" from="VBoxContainer/MenuBar/open" to="VBoxContainer/WorkSpace" method="_on_open_pressed"]
+[connection signal="pressed" from="VBoxContainer/MenuBar/new" to="VBoxContainer/WorkSpace" method="_on_new_pressed"]
+[connection signal="pressed" from="VBoxContainer/MenuBar/run" to="VBoxContainer/WorkSpace" method="_on_run_pressed"]
+[connection signal="pressed" from="VBoxContainer/MenuBar/load" to="VBoxContainer/WorkSpace" method="_on_load_2_pressed"]
+[connection signal="pressed" from="VBoxContainer/MenuBar/rearrange" to="VBoxContainer/WorkSpace" method="_on_rearrange_pressed"]
+[connection signal="pressed" from="VBoxContainer/MenuBar/setting" to="VBoxContainer/WorkSpace" method="_on_setting_pressed"]
+[connection signal="pressed" from="VBoxContainer/MenuBar/run_config/run_project" to="VBoxContainer/WorkSpace" method="_on_run_project_pressed"]
+[connection signal="item_selected" from="VBoxContainer/MenuBar/run_config/project_choose" to="VBoxContainer/WorkSpace" method="_on_project_choose_item_selected"]
+[connection signal="item_activated" from="VBoxContainer/WorkSpace/SideBar/FileHistory" to="VBoxContainer/WorkSpace" method="_on_file_history_item_activated"]
+[connection signal="item_activated" from="VBoxContainer/WorkSpace/SideBar/States" to="VBoxContainer/WorkSpace/SideBar/States" method="_on_item_activated"]
+[connection signal="item_selected" from="VBoxContainer/WorkSpace/SideBar/States" to="VBoxContainer/WorkSpace/SideBar/States" method="_on_item_selected"]
+[connection signal="connection_request" from="VBoxContainer/WorkSpace/GraphEdit" to="VBoxContainer/WorkSpace" method="_on_graph_edit_connection_request"]
+[connection signal="copy_nodes_request" from="VBoxContainer/WorkSpace/GraphEdit" to="VBoxContainer/WorkSpace" method="_on_graph_edit_copy_nodes_request"]
+[connection signal="delete_nodes_request" from="VBoxContainer/WorkSpace/GraphEdit" to="VBoxContainer/WorkSpace" method="_on_graph_edit_delete_nodes_request"]
+[connection signal="disconnection_request" from="VBoxContainer/WorkSpace/GraphEdit" to="VBoxContainer/WorkSpace" method="_on_graph_edit_disconnection_request"]
+[connection signal="node_deselected" from="VBoxContainer/WorkSpace/GraphEdit" to="VBoxContainer/WorkSpace/GraphEdit" method="_on_node_deselected"]
+[connection signal="node_selected" from="VBoxContainer/WorkSpace/GraphEdit" to="VBoxContainer/WorkSpace/GraphEdit" method="_on_node_selected"]
+[connection signal="paste_nodes_request" from="VBoxContainer/WorkSpace/GraphEdit" to="VBoxContainer/WorkSpace" method="_on_graph_edit_paste_nodes_request"]
+[connection signal="id_pressed" from="VBoxContainer/WorkSpace/GraphEdit/PopupMenu" to="VBoxContainer/WorkSpace" method="_on_popup_menu_id_pressed"]

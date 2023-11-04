@@ -1,0 +1,71 @@
+[gd_scene load_steps=3 format=3 uid="uid://dgehu404kucay"]
+
+[ext_resource type="Theme" uid="uid://ch03cnrspt63o" path="res://addons/Cutscener/resource/node_theme.tres" id="1_bvw1c"]
+[ext_resource type="Script" path="res://addons/Cutscener/main/Setting.gd" id="1_u5m5v"]
+
+[node name="Setting" type="TabContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_bvw1c")
+script = ExtResource("1_u5m5v")
+
+[node name="Enable Autoloads" type="VBoxContainer" parent="."]
+layout_mode = 2
+metadata/_tab_name = "配置Autoloads"
+
+[node name="Label" type="Label" parent="Enable Autoloads"]
+layout_mode = 2
+text = "载入 MerhodBus 中选中的全局脚本的方法 , 以在 信号 节点中选择.
+The Cutscener will load all methods from autoloads which selected under MethodBus.
+载入 StateBus 中选中的全局脚本的变量 , 以在 Set 节点中选择.
+The StateBus will load all properties from autoloads which selected under StateBus.
+*列表只会显示有@tool标记的工具脚本
+*Only showing autoloads with @tool"
+
+[node name="Button" type="Button" parent="Enable Autoloads"]
+visible = false
+layout_mode = 2
+toggle_mode = true
+text = "点我刷新数据~"
+
+[node name="TabContainer" type="TabContainer" parent="Enable Autoloads"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MethodBus" type="VBoxContainer" parent="Enable Autoloads/TabContainer"]
+layout_mode = 2
+
+[node name="MethodTree" type="Tree" parent="Enable Autoloads/TabContainer/MethodBus"]
+layout_mode = 2
+size_flags_vertical = 3
+columns = 3
+column_titles_visible = true
+allow_reselect = true
+hide_folding = true
+hide_root = true
+select_mode = 1
+scroll_horizontal_enabled = false
+
+[node name="StateBus" type="VBoxContainer" parent="Enable Autoloads/TabContainer"]
+visible = false
+layout_mode = 2
+
+[node name="StateTree" type="Tree" parent="Enable Autoloads/TabContainer/StateBus"]
+layout_mode = 2
+size_flags_vertical = 3
+columns = 3
+column_titles_visible = true
+allow_reselect = true
+hide_folding = true
+hide_root = true
+select_mode = 1
+scroll_horizontal_enabled = false
+
+[connection signal="hidden" from="." to="." method="_on_hidden"]
+[connection signal="button_clicked" from="Enable Autoloads/TabContainer/MethodBus/MethodTree" to="." method="_on_method_tree_button_clicked"]
+[connection signal="item_selected" from="Enable Autoloads/TabContainer/MethodBus/MethodTree" to="." method="_on_method_tree_item_selected"]
+[connection signal="button_clicked" from="Enable Autoloads/TabContainer/StateBus/StateTree" to="." method="_on_method_tree_button_clicked"]
+[connection signal="item_mouse_selected" from="Enable Autoloads/TabContainer/StateBus/StateTree" to="." method="_on_state_tree_item_mouse_selected"]

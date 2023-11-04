@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://us35lq4dhp2h"]
+
+[ext_resource type="Script" path="res://addons/Cutscener/clazz/node/Conmmon/export.gd" id="1_xuwbn"]
+
+[node name="Export" type="CheckButton"]
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.22
+tooltip_text = "合并时是否导出该行参数"
+script = ExtResource("1_xuwbn")
+
+[connection signal="toggled" from="." to="." method="_on_toggled"]
