@@ -9,7 +9,7 @@ func _enter_tree() -> void:
 		main_scene = preload("res://addons/Cutscener/main/main.tscn")
 		add_custom_type(
 			"CutscenerRunner","Node",preload("res://addons/Cutscener/clazz/node/Cutscener/CutscenerRunner.gd"),
-			preload("res://addons/Cutscener/resource/logo.svg")
+			preload("res://addons/Cutscener/resource/runner-logo.png")
 		)
 		main = main_scene.instantiate()
 		main.hide()
