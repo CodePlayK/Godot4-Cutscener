@@ -69,6 +69,7 @@ Branching node base on condition you add,it will output `TRUE` or `FALSE`.
 
 ### CombineNode
 The node that you can create from nodes you selected or just load in.
+
 To create from nodes:
  - Create a new StartNode and connect it to nodes that you want to combine as a startpoint.You only need to connect the start of nodes you choose,no need to connect every node to it.
  - Select more than one node.
