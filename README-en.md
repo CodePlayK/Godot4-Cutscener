@@ -26,7 +26,7 @@ Support node combination.
 
 ## Usage
 - Create .crd file in Cutscener Editor.
-   - Detail in [Node Introduction](https://github.com/CodePlayK/Godot-Cutscener/blob/master/README-en.md#node-instruction)
+   - Detail in [Node Introduction](https://github.com/CodePlayK/Godot4-Cutscener/blob/master/README-en.md#node-instruction)
 
 ![Screenshot](doc/screenshot/CutscenerRunner.png)
 - Instantiate CutscenerRunner in your project.
