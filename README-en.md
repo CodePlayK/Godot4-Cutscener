@@ -7,6 +7,7 @@ Easily create a branching event tree in a visuallize way, base on 3 type nodes:
 - SignalNode(run method)
 - SetNode(set variable)
 - ConditionNode(condition branching)
+
 No need to restart debuging while editing, seeing result in realtime.Very suitable to create a cutscene or dialogue system.
 Support node combination.
 
