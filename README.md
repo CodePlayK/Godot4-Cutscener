@@ -32,7 +32,6 @@
     - 为空时则会默认执行编辑器中最新保存过的存档
   - cutscener_name : `过场名`,默认为`"NA"`
 
-- 配置完`CutscenerRunner`后重启一下整个项目
 - 在Cutscener编辑器界面编辑并保存`.crd`文件
 - 在脚本中调用`CutscenerGlobal`中的`cutscener_run`信号,并把要运行的`过场名`作为参数
 ```
