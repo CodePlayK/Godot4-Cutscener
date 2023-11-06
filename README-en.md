@@ -41,7 +41,7 @@ Support node combination.
 CutscenerGlobal.cutscener_run.emit("Cutscener Name")
 ```
 > [!IMPORTANT]
-> The runner can't be shutdown or repeat run while running for now.
+> The same runner can't be shutdown or repeat run while running for now.
 
 - You need to save your `.crd` file under `user://` rather `res://`,in that,your modify of `.crd` will effect during debuging after you save the file.
 ## Node Instruction
