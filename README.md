@@ -1,5 +1,5 @@
 # Cutscener
-[English README](https://github.com/CodePlayK/Godot4-Cutscener/blob/master/README-en.md)
+[in English](https://github.com/CodePlayK/Godot4-Cutscener/blob/master/README-en.md)
 
 ![Screenshot](Cutscener/resource/logo-large.png)
 
